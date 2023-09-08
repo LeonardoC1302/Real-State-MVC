@@ -1,0 +1,43 @@
+.alert {
+    padding: .5rem;
+    text-align: center;
+    color: $white;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    &.error{
+        background-color: $red;
+    }
+    &.success{
+        background-color: $green;
+    }
+}
+
+table.properties {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+    thead {
+            background-color: $green;
+            th {
+                color: $white;
+                padding: 2rem;
+            }
+    }
+    tbody {
+        td{
+            text-align: center;
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+    .table-image {
+        width: 10rem;
+    }
+}
+
+.image-small {
+    width: 20rem;
+}
