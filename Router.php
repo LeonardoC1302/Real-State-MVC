@@ -26,7 +26,11 @@ class Router{
         }
     }
 
-    public function render($view){
+    public function render($view, $data = []){
+
+        foreach($data as $key => $value){
+            $$key = $value; // $$key is a variable variable
+        }
 
         ob_start(); // Start the buffer
         include __DIR__ . "/views/$view.php"; // Include the view
