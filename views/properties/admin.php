@@ -37,7 +37,7 @@
                             <input type="hidden" name="type" value="property">
                             <input type="submit" class="red-button-block" value="Delete">
                         </form>
-                        <a href="/admin/properties/update.php?id=<?php echo $property->id; ?>" class="yellow-button-block">Update</a>
+                        <a href=/properties/update?id=<?php echo $property->id; ?> class="yellow-button-block">Update</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

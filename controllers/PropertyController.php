@@ -54,8 +54,47 @@ class PropertyController {
         ]);
     }
 
-    public static function update() {
-        echo 'Update';
+    public static function update(Router $router) {
+
+        $id = validarORredirect('/admin');
+        $property = Property::find($id);
+        $sellers = Seller::all();
+        $errors = Property::getErrors();
+
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Assign values
+            $args = $_POST['property'];
+            
+            // Update the current property
+            $property->sync($args);
+    
+            $errors = $property->validate();
+            
+            // Generate a unique name
+            $imageName = md5(uniqid(rand(), true)) . '.jpg';
+    
+            if($_FILES['property']['tmp_name']['image']){
+                $image = Image::make($_FILES['property']['tmp_name']['image'])->fit(800, 600);
+                $property->setImage($imageName);
+            }
+    
+            // Insert if there are no errors
+            if(empty($errors)){
+                // Save image on disk
+                if($_FILES['property']['tmp_name']['image']){
+                    // debug(IMAGES_DIR . $imageName);
+                    $image->save(IMAGES_DIR . $imageName);
+                }
+                $property->save();
+            }
+        }
+        
+        $router->render('properties/update', [
+            'property' => $property,
+            'sellers' => $sellers,
+            'errors' => $errors
+        ]);
     }
 
 }

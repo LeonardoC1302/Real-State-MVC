@@ -54,3 +54,13 @@ function showNotification($code){
 
     return $message;
 }
+
+function validarORredirect(string $url){
+    $id = $_GET['id'] ?? null;
+    $id = filter_var($id, FILTER_VALIDATE_INT);
+    if(!$id) {
+        header("Location: $url");
+    }
+
+    return $id;
+}
