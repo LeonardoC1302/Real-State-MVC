@@ -55,7 +55,7 @@ function showNotification($code){
     return $message;
 }
 
-function validarORredirect(string $url){
+function validateORredirect(string $url){
     $id = $_GET['id'] ?? null;
     $id = filter_var($id, FILTER_VALIDATE_INT);
     if(!$id) {

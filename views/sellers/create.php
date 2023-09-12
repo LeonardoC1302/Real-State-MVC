@@ -1,5 +1,5 @@
 <main class="container section">
-    <h1>Create Property</h1>
+    <h1>Register Seller</h1>
     
     <?php
         foreach($errors as $error) : ?>
@@ -12,6 +12,6 @@
     
     <form class="form" method='POST' enctype="multipart/form-data">
         <?php include __DIR__ . '/form.php'; ?>
-        <input type="submit" value="Create Property" class="button green-button">
+        <input type="submit" value="Register Seller" class="button green-button">
     </form>
 </main>

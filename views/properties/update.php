@@ -1,5 +1,5 @@
 <main class="container section">
-    <h1>Update</h1>
+    <h1>Update Property</h1>
 
     <?php
         foreach($errors as $error) : ?>

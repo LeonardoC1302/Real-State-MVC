@@ -10,12 +10,14 @@ class PropertyController {
 
     public static function index(Router $router) {
         $properties = Property::all();
+        $sellers = Seller::all();
 
         $result = $_GET['result'] ?? null;
 
         $router->render('properties/admin', [
             'properties' => $properties,
-            'result' => $result
+            'result' => $result,
+            'sellers' => $sellers
         ]);
     }
 
@@ -56,7 +58,7 @@ class PropertyController {
 
     public static function update(Router $router) {
 
-        $id = validarORredirect('/admin');
+        $id = validateORredirect('/admin');
         $property = Property::find($id);
         $sellers = Seller::all();
         $errors = Property::getErrors();
@@ -95,6 +97,21 @@ class PropertyController {
             'sellers' => $sellers,
             'errors' => $errors
         ]);
+    }
+
+    public static function delete() {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+    
+            if($id){
+                $type = $_POST['type'];
+                if(validateContentType($type)){
+                    $property = Property::find($id);
+                    $property->delete();
+                }
+            }
+        }
     }
 
 }
