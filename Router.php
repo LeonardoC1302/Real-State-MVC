@@ -10,6 +10,10 @@ class Router{
     public function get($url, $fn){
         $this->routesGET[$url] = $fn;
     }
+    
+    public function post($url, $fn){
+        $this->routesPOST[$url] = $fn;
+    }
 
     public function checkRoutes(){
         $currentURL = $_SERVER['PATH_INFO'] ?? '/';
@@ -17,6 +21,8 @@ class Router{
 
         if($method === 'GET'){
             $fn = $this->routesGET[$currentURL] ?? null;
+        } else {
+            $fn = $this->routesPOST[$currentURL] ?? null;
         }
 
         if($fn){
