@@ -9,8 +9,8 @@
                 <?php }
             }
         ?>
-        <a href="/admin/properties/create.php" class="button green-button">New Property</a>
-        <a href="/admin/sellers/create.php" class="button yellow-button">New Seller</a>
+        <a href="/properties/create" class="button green-button">New Property</a>
+        <a href="/sellers/create.php" class="button yellow-button">New Seller</a>
 
         <h2>Properties</h2>
 

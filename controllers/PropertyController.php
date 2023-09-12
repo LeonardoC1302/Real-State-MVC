@@ -3,6 +3,7 @@
 namespace Controllers;
 use MVC\Router;
 use Model\Property;
+use Model\Seller;
 
 class PropertyController {
 
@@ -16,8 +17,14 @@ class PropertyController {
         ]);
     }
 
-    public static function create() {
-        echo 'Create';
+    public static function create(Router $router) {
+        $property = new Property;
+        $sellers = Seller::all();
+
+        $router->render('properties/create', [
+            'property' => $property,
+            'sellers' => $sellers
+        ]);
     }
 
     public static function update() {
