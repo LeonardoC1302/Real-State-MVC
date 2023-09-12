@@ -24,6 +24,13 @@ class Router{
         }else{
             echo 'Page not found';
         }
+    }
 
+    public function render($view){
+
+        ob_start(); // Start the buffer
+        include __DIR__ . "/views/$view.php"; // Include the view
+        $content = ob_get_clean(); // Save the content of the buffer in a variable
+        include __DIR__ . "/views/layout.php"; // Include the layout
     }
 }
