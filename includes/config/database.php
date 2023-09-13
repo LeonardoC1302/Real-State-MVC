@@ -1,11 +1,14 @@
 <?php
 function connect_db() : mysqli {
-    $host = 'mysql-leoc1302.alwaysdata.net';
-    $user = 'leoc1302';
-    $password = 'passWD123';
-    $database = 'leoc1302_realstate';
+    $db = new mysqli(
+    $_ENV['DB_HOST'], 
+    $_ENV['DB_USER'], 
+    $_ENV['DB_PASS'], 
+    $_ENV['DB_NAME']
+);
 
-    $db = new mysqli($host, $user, $password, $database);
+$db->set_charset("utf8");
+
     if(!$db) {
         echo "Error connecting to database";
         exit;
@@ -14,23 +17,3 @@ function connect_db() : mysqli {
     return $db;
 }
 
-
-/*
-
-<?php
-function connect_db() : mysqli {
-    $host = 'localhost';
-    $user = 'root';
-    $password = '123';
-    $database = 'realstate_crud';
-
-    $db = new mysqli($host, $user, $password, $database);
-    if(!$db) {
-        echo "Error connecting to database";
-        exit;
-    }
-
-    return $db;
-}
-
-*/

@@ -56,11 +56,11 @@ class PagesController {
             $mail = new PHPMailer(true);
             // SMTP settings
             $mail->isSMTP();
-            $mail->Host = 'sandbox.smtp.mailtrap.io';
+            $mail->Host = $_ENV['EMAIL_HOST'];
             $mail->SMTPAuth = true;
-            $mail->Port = 2525;
-            $mail->Username = 'd4b1e27352a262';
-            $mail->Password = '1d64f440bc252f';
+            $mail->Port = $_ENV['EMAIL_PORT'];
+            $mail->Username = $_ENV['EMAIL_USER'];
+            $mail->Password = $_ENV['EMAIL_PASS'];
             $mail->SMTPSecure = 'tls'; // Enable TLS encryption
             $mail->Port = 2525; // TCP port to connect to
 

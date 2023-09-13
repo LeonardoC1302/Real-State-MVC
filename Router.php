@@ -29,7 +29,7 @@ class Router{
             '/sellers/delete'
         ];
 
-        $currentURL = $_SERVER['PATH_INFO'] ?? '/';
+        $currentURL = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
 
         if($method === 'GET'){

@@ -51,6 +51,7 @@
 
 # ignore all files starting with . or ~
 .DS_Store
+.env
 ~*
 
 # ignore node/grunt dependency directories
