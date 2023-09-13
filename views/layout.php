@@ -24,7 +24,7 @@
     <header class="header <?php echo $start ? 'start' : ''; ?>">
         <div class="container header-content">
             <div class="bar">
-                <a href="/index.php">
+                <a href="/">
                     <img src="/build/img/logo.svg" alt="Real State Logo">
                 </a>
 
@@ -34,10 +34,10 @@
                 <div class="right">
                     <img src="/build/img/dark-mode.svg" alt="Dark Mode Img" class="dark-mode-button">
                     <nav class="navigation">
-                        <a href="/aboutUs.php">About Us</a>
-                        <a href="/announcements.php">Announcements</a>
-                        <a href="/blog.php">Blog</a>
-                        <a href="/contact.php">Contact</a>
+                        <a href="/aboutus">About Us</a>
+                        <a href="/properties">Announcements</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contact">Contact</a>
                         <?php if($auth){ ?>
                             <a href="/logout.php">Log Out</a>
                         <?php } else { ?>
@@ -57,10 +57,10 @@
     <footer class="footer section">
         <div class="container footer-content">
             <nav class="navigation">
-                <a href="aboutUs.php">About Us</a>
-                <a href="announcements.php">Announcements</a>
-                <a href="blog.php">Blog</a>
-                <a href="contact.php">Contact</a>
+                <a href="/aboutus">About Us</a>
+                <a href="/properties">Announcements</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
             </nav>
         </div>
 
