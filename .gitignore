@@ -50,7 +50,7 @@
 # -----------------------------------------------------------------
 
 # ignore all files starting with . or ~
-.*
+.DS_Store
 ~*
 
 # ignore node/grunt dependency directories
