@@ -16,6 +16,11 @@ mysql --version
 composer --version
 ```
 
+- You will also need to have npm installed on your local machine. You can check your npm version by running the following command in your terminal:
+``` bash
+npm --version
+```
+
 ## Installation and Usage
 1. Clone this repository into your local machine:
 ``` bash
@@ -56,4 +61,7 @@ php -S localhost:3000
 - Contact form: The website has a contact form that allows users to send messages to the admin. Mailtrap is used to test the contact form.
 
 ## Project Screenshots
+### Home Page
 ![alt text](/assets/images/realstate.png)
+### Admin Panel
+![alt text](/assets/images/adminPanel.png)
