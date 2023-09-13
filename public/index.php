@@ -6,6 +6,7 @@ use MVC\Router;
 use Controllers\PropertyController;
 use Controllers\SellerController;
 use Controllers\PagesController;
+use Controllers\LoginController;
 
 $router = new Router();
 
@@ -39,5 +40,11 @@ $router->get('/entry', [PagesController::class, 'entry']);
 $router->get('/contact', [PagesController::class, 'contact']);
 
 $router->post('/contact', [PagesController::class, 'contact']);
+
+// ---------------------------- LOGIN & LOGOUT ----------------------------
+$router->get('/login', [LoginController::class, 'login']);
+$router->post('/login', [LoginController::class, 'login']);
+
+$router->get('/logout', [LoginController::class, 'logout']);
 
 $router->checkRoutes();

@@ -16,6 +16,19 @@ class Router{
     }
 
     public function checkRoutes(){
+        session_start();
+        $auth = $_SESSION['login'] ?? null;
+
+        $protectedRoutes = [
+            '/admin',
+            '/properties/create',
+            '/properties/update',
+            '/properties/delete',
+            '/sellers/create',
+            '/sellers/update',
+            '/sellers/delete'
+        ];
+
         $currentURL = $_SERVER['PATH_INFO'] ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
 
@@ -29,6 +42,11 @@ class Router{
             call_user_func($fn, $this);
         }else{
             echo 'Page not found';
+        }
+
+        // Protected routes
+        if(in_array($currentURL, $protectedRoutes) && !$auth){
+            header('Location: /');
         }
     }
 

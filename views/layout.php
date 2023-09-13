@@ -39,9 +39,9 @@
                         <a href="/blog">Blog</a>
                         <a href="/contact">Contact</a>
                         <?php if($auth){ ?>
-                            <a href="/logout.php">Log Out</a>
+                            <a href="/logout">Log Out</a>
                         <?php } else { ?>
-                            <a href="/login.php">Log In</a>
+                            <a href="/login">Log In</a>
                         <?php } ?>
                     </nav>
                 </div>
