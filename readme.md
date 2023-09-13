@@ -27,7 +27,19 @@ npm --version
 git clone https://github.com/LeonardoC1302/Real-State.git
 ```
 2. Create a new database named "realstate_crud" on your local machine and use the "realstate_crud.sql" file to create the tables and populate the database.
-3. Head to the "includes/config" folder and edit the "database.php" file to match your database credentials.
+3. Head to the "includes/config" folder and create a new file named ".env". Fill the file with the following code:
+```
+DB_HOST = 
+DB_USER = 
+DB_PASS = 
+DB_NAME = 
+
+EMAIL_HOST = 
+EMAIL_PORT = 
+EMAIL_USER = 
+EMAIL_PASS = 
+```
+*Fill the variables with your database and email credentials.
 4. Install the dependencies using composer:
 ``` bash
 composer install
