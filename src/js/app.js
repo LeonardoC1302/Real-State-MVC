@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function eventListeners() {
     const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.addEventListener('click', responsiveMenu);
+
+    // Show and hide fields of the form
+    const contactMethod = document.querySelectorAll('input[name="contact[contact]"]');
+    contactMethod.forEach(input => input.addEventListener('click', showContactMethods));
 }
 
 function responsiveMenu() {
@@ -46,3 +50,26 @@ setTimeout(() => {
         alert.remove();
     }
 }, 5000); // 5 seconds
+
+function showContactMethods(e) {
+    const contactDiv = document.querySelector('#contact');
+    
+    if(e.target.value === 'phone'){
+        contactDiv.innerHTML = `
+            <label for="phone">Phone Number</label>
+            <input type="tel" placeholder="Your Phone Number" id="phone" name="contact[phone]">
+
+            <p>Select a date and time for the call</p>
+            <label for="date">Date: </label>
+            <input type="date" id="date"  name="contact[date]">
+
+            <label for="time">Time: </label>
+            <input type="time" id="time" min="09:00" max="18:00"  name="contact[time]">
+        `;
+    } else{
+        contactDiv.innerHTML = `
+            <label for="email">E-Mail</label>
+            <input type="email" placeholder="Your E-Mail" id="email" name="contact[email]" required>
+        `;
+    }
+}
