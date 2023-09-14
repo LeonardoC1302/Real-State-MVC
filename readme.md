@@ -26,7 +26,7 @@ npm --version
 ``` bash
 git clone https://github.com/LeonardoC1302/Real-State.git
 ```
-2. Create a new database named "realstate_crud" on your local machine and use the "realstate_crud.sql" file to create the tables and populate the database.
+2. Create a new database named "realstate_crud" on your local machine and use the "db_script.sql" file to create the tables and populate the database.
 3. Head to the "includes/config" folder and create a new file named ".env". Fill the file with the following code:
 ```
 DB_HOST = 
